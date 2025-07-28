@@ -67,7 +67,7 @@ The system implements a multi-stage PDF analysis process:
 ```bash
 mkdir pdf-outline-extractor
 cd pdf-outline-extractor
-mkdir -p input output/repoidentifier
+mkdir -p input output/1a
 ```
 
 ### 2. Add Required Files
@@ -75,7 +75,7 @@ mkdir -p input output/repoidentifier
 #### Dockerfile
 
 ```dockerfile
-FROM python:3.10-slim
+FROM python:3.11-slim
 
 RUN apt-get update && apt-get install -y \
     libgl1 \
@@ -86,13 +86,13 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
-COPY extract_outline.py .
+COPY main.py .
 
 RUN mkdir -p /app/input /app/output
 
-ENTRYPOINT ["python", "extract_outline.py"]
+ENTRYPOINT ["python", "main.py"]
 ```
 
 #### requirements.txt
@@ -166,7 +166,7 @@ The system generates `.json` files in the `output/repoidentifier/` directory wit
 
 1. Place PDFs in the `input/` directory.
 2. Run the Docker container.
-3. Find structured JSON outlines in `output/repoidentifier/`.
+3. Find structured JSON outlines in `output/1a/`.
 4. Use the output for document analysis, indexing, or navigation.
 
 ---
@@ -182,7 +182,7 @@ The system generates `.json` files in the `output/repoidentifier/` directory wit
 ### Permission Errors?
 
 ```bash
-chmod a+rwx output/repoidentifier
+chmod a+rwx output/1a
 ```
 
 ### Processing Errors?
