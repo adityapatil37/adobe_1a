@@ -1,6 +1,7 @@
 # PDF Outline Extractor
 
 ## Overview
+**Docker Hub Link:** [https://hub.docker.com/repository/docker/adityapatil7730/1a/general](https://hub.docker.com/repository/docker/adityapatil7730/1a/general)
 
 This solution extracts structured outlines (headings hierarchy) and titles from PDF documents. It analyzes font sizes to identify document titles and heading levels (H1, H2), providing a JSON representation of the document's semantic structure.
 
@@ -236,4 +237,4 @@ pdf-outline-extractor/
 
 This solution provides a robust, self-contained system for extracting semantic structure from PDF documents with minimal setup requirements.
 
-**Docker Hub Link:** [https://hub.docker.com/repository/docker/adityapatil7730/1a/general](https://hub.docker.com/repository/docker/adityapatil7730/1a/general)
+
